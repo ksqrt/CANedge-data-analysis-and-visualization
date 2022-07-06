@@ -14,23 +14,49 @@ grafana
 
 ## 사용법
 
-### 1: env 모드의 활성화와 requirements.txt 에있는 파이썬 파일들의 설치
+### 0: 오른쪽 초록색 버튼을 누른뒤 project를 zip 으로 다운받은뒤 압축해제
+
+### 1: virtual environment 설치와 requirements.txt 에있는 파이썬 라이브러리 설치
 
 ##### Windows
 
 ```
 python -m venv env & env\Scripts\activate & pip install -r requirements.txt
-python main.py
+
 ```
 
 ##### Linux
 
 ```
 python3 -m venv env && source env/bin/activate && pip install -r requirements.txt
-python3 main.py
+
 ```
 
 python3 이 안된다면 python 으로 바꿔서 해볼것
+설치후 env 파일이 생긴것을 확인할수 있음 env 파일이있으면 삭제후 재설치
+
+### 2: env 모드로 진입
+
+##### Windows
+
+```
+env\Scripts\activate
+
+```
+
+##### Linux
+
+```
+source env/bin/activate
+
+```
+
+### 3:
+
+```
+python3 main.py
+
+```
 
 ---
 
