@@ -1,114 +1,122 @@
-# CANedge InfluxDB Writer - Push CAN Bus Data to InfluxDB
+# CANedge 데이터 분석 및 시각화
 
-This project lets you DBC decode CAN data from your [CANedge](https://www.csselectronics.com/pages/can-bus-hardware-products) CAN/LIN data logger - and push the data into an InfluxDB database. From here, the data can be visualized in your own customized, open source Grafana dashboards.
+CSS-Electronics사의 파이썬 API 를 활용해 CANedge 데이터 전처리
+이후 InfluxDB 와 Grafana 를 통한 데이터 시각화
 
-For the full step-by-step guide to setting up your dashboard, see the [CANedge intro](https://canlogger.csselectronics.com/canedge-getting-started/log-file-tools/browser-dashboards).
+## 개발환경
 
-![CAN Bus Grafana InfluxDB Dashboard](https://canlogger1000.csselectronics.com/img/CAN-Bus-Telematics-Dashboard-InfluxDB-Grafana.png)
+---
 
-## Backend vs. Writer
-We provide two options for integrating your CANedge data with Grafana dashboards:
+Python 3.8.10  
+Docker 20.10.17  
+influxdb  
+grafana
 
-The [CANedge Grafana Backend](https://github.com/CSS-Electronics/canedge-grafana-backend) app only processes data 'when needed' by an end user - and requires no database. It is ideal when you have large amounts of data - as you only process the data you need to visualize. 
+## 파일구조
 
-The [CANedge InfluxDB Writer](https://github.com/CSS-Electronics/canedge-influxdb-writer) processes data in advance (e.g. periodically or on-file-upload) and writes the decoded data to a database. It is ideal if dashboard loading speed is critical - but with the downside that data is processed/stored even if it is not used.
+---
 
-For details incl. 'pros & cons', see our [intro to telematics dashboards](https://www.csselectronics.com/pages/telematics-dashboard-open-source).
+<!-- ## 실행방법
 
-----
+---
+
+```
+/home/test/api-examples/ canedge-influxdb-writer-master
+
+안의 inputs.py 의 DBC 와 MF4 파일을 원하는대로 수정한뒤
+
+linux 는 source env/bin/activate 로
+ virtual environment 에 진입한뒤
+ python3 main.py 로 데이터 전송
+
+
+``` -->
 
 ## Features
+
 ```
-- easily load MF4 log files from local disk or S3 server
-- fetch data from hardcoded time period - or automate with dynamic periods
-- DBC-decode data and optionally extract specific signals
-- optionally resample data to specific frequency
-- optionally process multi-frame CAN data (ISO TP), incl. UDS, J1939, NMEA 2000
-- write the data to your own InfluxDB time series database
+For most use cases we recommend to start with the below examples:
+- data-processing: List log files, load them and DBC decode the data (local, S3)
+
+For some use cases the below examples may be useful:
+- other/asammdf-basics: Load and concatenate MF4 logs, DBC decode them - and save as new MF4 files
+- other/matlab-basics: Examples of how to load and use MF4/MAT CAN bus data
+- other/s3-basics: Examples of how to download, upload or list specific objects on your server
+- other/s3-events: Using AWS Lambda or MinIO notifications (for event based data processing)
+- other/misc: Example of automating the use of the MDF4 converters and misc tools
+
 ```
-----
+
+---
 
 ## Installation
 
-In this section we detail how to deploy the app on a PC. 
-
-Note: We recommend to test the deployment with our sample data as the first step.
-
-----
-
-### 1: Deploy the integration locally on your PC
-
-#### Install dependencies & write sample data to InfluxDB Cloud
-
 - Install Python 3.7 for Windows ([32 bit](https://www.python.org/ftp/python/3.7.9/python-3.7.9.exe)/[64 bit](https://www.python.org/ftp/python/3.7.9/python-3.7.9-amd64.exe)) or [Linux](https://www.python.org/downloads/release/python-379/) (_enable 'Add to PATH'_)
-- Download this project as a zip via the green button and unzip it 
-- Open the folder with the `requirements.txt` file 
-- Open `inputs.py` with a text editor and add your InfluxDB Cloud details 
-- Open your [command prompt](https://www.youtube.com/watch?v=bgSSJQolR0E&t=47s) and enter below
+- Download this project as a zip via the green button and unzip it
+- Open the folder with the `requirements.txt` file and enter below in your [command prompt](https://www.youtube.com/watch?v=bgSSJQolR0E&t=47s):
 
-##### Windows 
+##### Windows
+
 ```
 python -m venv env & env\Scripts\activate & pip install -r requirements.txt
-python main.py
+python script_to_run.py
 ```
 
-##### Linux 
+##### Linux
+
 ```
 python -m venv env && source env/bin/activate && pip install -r requirements.txt
-python main.py
+python script_to_run.py
 ```
 
-#### Set up Grafana Cloud
+If you later need to re-activate the virtual environment, use `env\Scripts\activate`.
 
-- In `Configuration/Plugins` install `TrackMap`
-- In `Dashboards/Browse` click `Import` and load the `dashboard-template-sample-data.json` from this repo 
+---
 
-You should now see the sample data visualized in Grafana. 
+## Sample data (MDF4 & DBC)
 
-Note: To activate your virtual environment use `env\Scripts\activate` (Linux: `source env/bin/activate`)
+The various folders include sample log files and DBC files. Once you've tested a script with the sample data, you can replace it with your own.
 
-----
+---
 
-### 2: Load your own data & DBC files 
+## Usage info
 
-#### Load from local disk 
-- Replace the sample `LOG/` folder with your own `LOG/` folder
-- Verify that your data is structured as on the CANedge SD card i.e. `[device_id]/[session]/[split].MF4`
-- Add your DBC file(s) to the `dbc_files` folder
-- Update `devices` and `dbc_paths` in `inputs.py` to reflect your added log and DBC files
-- Set `days_offset = None` to ensure your data is written at the correct date
-- Verify that your venv is active and run the script via `python main.py` 
+- Some example folders contain their own `README.md` files for extra information
+- These example scripts are designed to be minimal and to help you get started - not for production
+- Some S3 scripts use hardcoded credentials to ease testing - for production see e.g. [this guide](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/configuration.html)
 
-#### Load from S3
-- Add your DBC file(s) to the `dbc_files` folder
-- Update `dbc_paths` in `inputs.py` to reflect your added log and DBC files
-- Update `devices` in `inputs.py` to reflect your S3 structure i.e. `["bucket/device_id"]`
-- Set `days_offset = None` to ensure your data is written at the correct date
-- Update the S3 details in `inputs.py` with your S3 server and set `s3 = True` 
+---
 
-Note: You may want to modify other variables like adding signal filters, changing the resampling or modifying the default start date.
+## Which API modules to use?
 
-#### Import simplified dashboard template 
-- To get started, import the `dashboard-template-simple.json` to visualize your own data
-- After this, you can optionally start customizing your panels as explained in the CANedge Intro
+There are many ways that you can work with the data from your CANedge devices. Most automation use cases involve fetching data from a specific device and time period - and DBC decoding this into a dataframe for further processing. Here, we recommend to look at the examples from the `data-processing/` folder. These examples use our custom modules designed for use with the CANedge: The [mdf_iter](https://pypi.org/project/mdf-iter/) (for loading MDF4 data), the [canedge_browser](https://github.com/CSS-Electronics/canedge_browser) (for fetching specific data locally or from S3) and the [can_decoder](https://github.com/CSS-Electronics/can_decoder) (for DBC decoding the data). In combination, these modules serve to support most use cases.
 
-----
+If you have needs that are not covered by these modules, you can check out the other examples using the asammdf API, the AWS/MinIO S3 API and our MDF4 converters.
 
-### 3: Automate & scale
+If in doubt, [contact us](https://www.csselectronics.com/pages/contact-us) for sparring.
 
-Once you've verified that your data is uploaded correctly, you can move on to automating it. See the [CANedge intro](https://canlogger.csselectronics.com/canedge-getting-started/log-file-tools/browser-dashboards) for details.
+---
 
-----
+## About the CANedge
 
-## Other information
+For details on installation and how to get started, see the documentation:
 
-#### Delete data from InfluxDB
-If you need to delete data in InfluxDB that you e.g. uploaded as part of a test, you can use the `delete_influx(name)` function from the `SetupInflux` class. Call it by parsing the name of the 'measurement' to delete (i.e. the device ID): `influx.delete_influx("958D2219")`
+- [CANedge Docs](https://www.csselectronics.com/pages/can-bus-hardware-software-docs)
+- [CANedge1 Product Page](https://www.csselectronics.com/products/can-logger-sd-canedge1)
+- [CANedge2 Product Page](https://www.csselectronics.com/products/can-bus-data-logger-wifi-canedge2)
 
-#### Multi-frame data (ISO TP)
-You can easily process multi-frame data by setting the `tp_type` variable to `"j1939"`, `"uds"` or `"nmea"` and adding the relevant DBC file. For example, you can test this for the sample data by adding the DBC `"dbc_files/nissan_uds.dbc"` and setting `tp_type = "uds"`.
+---
 
-----
+## Contribution & support
 
-#### Regarding InfluxDB and S3 usage costs
-Note that if you use the paid InfluxDB cloud and a paid S3 server, we recommend that you monitor usage during your tests early on to ensure that no unexpected cost developments occur.
+Feature suggestions, pull requests or questions are welcome!
+
+You can contact us at CSS Electronics below:
+
+- [www.csselectronics.com](https://www.csselectronics.com)
+- [Contact form](https://www.csselectronics.com/pages/contact-us)
+
+## 참고
+
+https://github.com/CSS-Electronics/api-examples  
+https://github.com/CSS-Electronics/canedge-influxdb-writer
