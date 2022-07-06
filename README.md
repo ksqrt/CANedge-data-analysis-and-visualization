@@ -16,7 +16,11 @@ grafana
 
 ### 0: 오른쪽 초록색 버튼을 누른뒤 project를 zip 으로 다운받은뒤 압축해제
 
+---
+
 ### 1: virtual environment 설치와 requirements.txt 에있는 파이썬 라이브러리 설치
+
+---
 
 ##### Windows
 
@@ -37,6 +41,8 @@ python3 이 안된다면 python 으로 바꿔서 해볼것
 
 ### 2: env 모드로 진입
 
+---
+
 ##### Windows
 
 ```
@@ -51,7 +57,9 @@ source env/bin/activate
 
 ```
 
-### 3:
+### 3 main 파일을 실행:
+
+---
 
 ```
 python3 main.py
