@@ -80,6 +80,13 @@ python3 main.py
 
 ```
 
+성공시 아래의 문구가 여러번 출력되며 influx db에 데이터가 쌓임
+
+```
+Signal: response (mean: 4.0 | records: 63 | resampling: 1S)
+- SUCCESS: 63 records of 2C4E8905 written to InfluxDB
+```
+
 ---
 
 <!-- ## 실행방법
