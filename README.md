@@ -12,7 +12,25 @@ Docker 20.10.17
 influxdb  
 grafana
 
-## 파일구조
+## 사용법
+
+### 1: env 모드의 활성화와 requirements.txt 에있는 파이썬 파일들의 설치
+
+##### Windows
+
+```
+python -m venv env & env\Scripts\activate & pip install -r requirements.txt
+python main.py
+```
+
+##### Linux
+
+```
+python3 -m venv env && source env/bin/activate && pip install -r requirements.txt
+python3 main.py
+```
+
+python3 이 안된다면 python 으로 바꿔서 해볼것
 
 ---
 

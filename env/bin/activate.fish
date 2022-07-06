@@ -29,7 +29,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/home/test/api-examples/canedge-influxdb-writer-master/env"
+set -gx VIRTUAL_ENV "/home/test/CANedge-data-analysis-and-visualization/env"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
