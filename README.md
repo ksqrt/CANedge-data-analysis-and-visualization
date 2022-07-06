@@ -87,7 +87,14 @@ Signal: response (mean: 4.0 | records: 63 | resampling: 1S)
 - SUCCESS: 63 records of 2C4E8905 written to InfluxDB
 ```
 
+### 5 : Grafana 설정:
+
 ---
+
+Configuration/Plugins 에서 TrackMap 인스톨
+Dashboards/Browse 에서 Import 버튼클릭 이후 dashboard-templates 폴더안의 dashboard-template-sample-data.json 을 업로드한다
+
+이후 시간대와 속성값을 잘 선택하여 데이터가 표기되는지 확인한다
 
 <!-- ## 실행방법
 
