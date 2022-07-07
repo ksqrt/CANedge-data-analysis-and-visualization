@@ -18,13 +18,6 @@ CSS-Electronics사의 파이썬 API 를 활용해 CANedge 데이터 전처리
 <img src="https://img.shields.io/badge/InfluxDB-22ADF6?style=flat&logo=InfluxDB&logoColor=white"/>
 <img src="https://img.shields.io/badge/Grafana-F46800?style=flat&logo=Grafana&logoColor=white"/>
 
-Python 3.8.10  
-Docker 20.10.17  
-influxdb  
-grafana
-
-![Generic badge](https://img.shields.io/badge/version-3.8.10-green.svg)
-
 ## 사용법
 
 ### 0 : 오른쪽 초록색 버튼을 누른뒤 project를 zip 으로 다운받은뒤 압축해제
