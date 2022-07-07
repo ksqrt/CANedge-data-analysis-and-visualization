@@ -12,11 +12,19 @@
 CSS-Electronics사의 파이썬 API 를 활용해 CANedge 데이터 전처리
 이후 InfluxDB 와 Grafana 를 통한 데이터 시각화
 
-LOG 폴더안의.MF4 파일과 dbc_files 폴더안의 .dbc파일 을 통해 데이터를 추출합니다
+.MF4 파일과 .dbc파일 을 통해 데이터를 추출합니다
 
 이후 데이터를 influxDB에 업로드하고 grafana 를 통해 시각화합니다
 
 <br>
+
+## 파일 미리보기
+
+- LOG/: raw 데이터를 담고있습니다(.MF4)
+- dbc_files/: DBC 파일을 담고있습니다.
+- dashboard-templates : grafana 에 import 될 flex 쿼리문을 담고있습니다
+- main.py : exec) 모드에서 실행시 influxdb에 데이터를 가공추출하여 업로드 합니다
+- utils.py: 다른 스크립트에서 사용하는 클래스와 함수가 들어있습니다
 
 ## 초기설정
 
