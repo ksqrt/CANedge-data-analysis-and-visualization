@@ -7,10 +7,15 @@ CSS-Electronics사의 파이썬 API 를 활용해 CANedge 데이터 전처리
 
 ---
 
-<img src="https://img.shields.io/badge/Python-#3776AB?
+<img src="https://img.shields.io/badge/Python-3776AB?
           style=flat
           &logo=Python
           &logoColor=white"/>
+
+<img src="https://img.shields.io/badge/Python-3776AB?
+style=flat
+&logo=Python
+&logoColor=white"/>
 
 <!-- <img src="https://img.shields.io/badge/Python-#3776AB?
           style=[배지의 모양 :flat
