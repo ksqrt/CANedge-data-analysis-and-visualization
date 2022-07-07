@@ -1,31 +1,49 @@
 # CANedge 데이터 분석 및 시각화
 
-CSS-Electronics사의 파이썬 API 를 활용해 CANedge 데이터 전처리
-이후 InfluxDB 와 Grafana 를 통한 데이터 시각화
-
-## 개발환경
-
 <p>
-
 <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=Pythont&logoColor=white" alt="Badge">
 <img src="https://img.shields.io/badge/version-3.8.10-green.svg">
-<br>
 <img src="https://img.shields.io/badge/Docker-2496ED?style=flat&logo=Docker&logoColor=white" alt="Badge"/>
 <img src="https://img.shields.io/badge/version-20.10.17-green.svg">
-<br>
 <img src="https://img.shields.io/badge/InfluxDB-22ADF6?style=flat&logo=InfluxDB&logoColor=white"/>
 <img src="https://img.shields.io/badge/Grafana-F46800?style=flat&logo=Grafana&logoColor=white"/>
 </p>
 
-## 사용법
+CSS-Electronics사의 파이썬 API 를 활용해 CANedge 데이터 전처리
+이후 InfluxDB 와 Grafana 를 통한 데이터 시각화
 
-### 0 : 오른쪽 초록색 버튼을 누른뒤 project를 zip 으로 다운받은뒤 압축해제
+LOG 폴더안의.MF4 파일과 dbc_files 폴더안의 .dbc파일 을 통해 데이터를 추출합니다
+
+이후 데이터를 influxDB에 업로드하고 grafana 를 통해 시각화합니다
+
+<br>
+
+## 초기설정
 
 ---
+
+https://canlogger.csselectronics.com/canedge-getting-started/log-file-tools/browser-dashboard/influxdb-writer/initial-setup/
+
+위 링크를 참고하여 influxDB와 gragan setup을 마칩니다.
+
+<br>
+
+## 사용방법
+
+### 0 : 다운로드
+
+---
+
+초록색 code 버튼을 누룬뒤 Download ZIP 버튼을 눌러 다운로드 이후 압축해제 까지 진행합니다.
+
+<br>
 
 ### 1 : inputs.py 수정
 
 ---
+
+압축을 해제한 이후 나온 폴더안 inpyts.py 파일을 개인에 맞게 수정합니다  
+<br>
 
 ```
 # specify your InfluxDB details
@@ -35,7 +53,8 @@ influx_url = "influx_endpoint"
 org_id = "influx_org_id"
 ```
 
-사용자에 InfluxDB 를 참고하여 수정한다
+사용자에 InfluxDB 를 참고하여 수정합니다  
+<br>
 
 ### 2 : virtual environment 설치와 requirements.txt 에있는 파이썬 라이브러리 설치
 
@@ -101,23 +120,9 @@ Dashboards/Browse 에서 Import 버튼클릭 이후 dashboard-templates 폴더�
 
 이후 시간대와 속성값을 잘 선택하여 데이터가 표기되는지 확인한다
 
-<!-- ## 실행방법
-
----
-
-```
-/home/test/api-examples/ canedge-influxdb-writer-master
-
-안의 inputs.py 의 DBC 와 MF4 파일을 원하는대로 수정한뒤
-
-linux 는 source env/bin/activate 로
- virtual environment 에 진입한뒤
- python3 main.py 로 데이터 전송
-
-
-``` -->
-
 ## 참고
+
+https://canlogger.csselectronics.com/canedge-getting-started/log-file-tools/browser-dashboard/influxdb-writer/initial-setup/
 
 https://github.com/CSS-Electronics/api-examples  
 https://github.com/CSS-Electronics/canedge-influxdb-writer
