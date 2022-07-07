@@ -7,16 +7,16 @@ CSS-Electronics사의 파이썬 API 를 활용해 CANedge 데이터 전처리
 
 ---
 
-<img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=Pythont&logoColor=white"/>
+<img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=Pythont&logoColor=white"/> &nbsp
 
-![Generic badge](https://img.shields.io/badge/version-3.8.10-green.svg)
+![Generic badge](https://img.shields.io/badge/version-3.8.10-green.svg) &nbsp
 
-<img src="https://img.shields.io/badge/Docker-2496ED?style=flat&logo=Docker&logoColor=white"/>
+<img src="https://img.shields.io/badge/Docker-2496ED?style=flat&logo=Docker&logoColor=white"/> &nbsp
 
-![Generic badge](https://img.shields.io/badge/version-20.10.17-green.svg)
+![Generic badge](https://img.shields.io/badge/version-20.10.17-green.svg) &nbsp
 
-<img src="https://img.shields.io/badge/InfluxDB-22ADF6?style=flat&logo=InfluxDB&logoColor=white"/>
-<img src="https://img.shields.io/badge/Grafana-F46800?style=flat&logo=Grafana&logoColor=white"/>
+<img src="https://img.shields.io/badge/InfluxDB-22ADF6?style=flat&logo=InfluxDB&logoColor=white"/> &nbsp
+<img src="https://img.shields.io/badge/Grafana-F46800?style=flat&logo=Grafana&logoColor=white"/> &nbsp
 
 ## 사용법
 
