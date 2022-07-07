@@ -5,9 +5,9 @@ CSS-Electronics사의 파이썬 API 를 활용해 CANedge 데이터 전처리
 
 ## 개발환경
 
----
 
 <p>
+<<<<<<< HEAD
 
 <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=Pythont&logoColor=white" alt="Badge">
 <img src="https://img.shields.io/badge/version-20.10.17-green.svg">
@@ -18,6 +18,23 @@ CSS-Electronics사의 파이썬 API 를 활용해 CANedge 데이터 전처리
 <img src="https://img.shields.io/badge/InfluxDB-22ADF6?style=flat&logo=InfluxDB&logoColor=white"/>
 <img src="https://img.shields.io/badge/Grafana-F46800?style=flat&logo=Grafana&logoColor=white"/>
 </p>
+=======
+
+<img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=Pythont&logoColor=white" alt="Badge">
+<img src="https://img.shields.io/badge/version-20.10.17-green.svg">
+<br>
+<img src="https://img.shields.io/badge/Docker-2496ED?style=flat&logo=Docker&logoColor=white" alt="Badge"/>
+<img src="https://img.shields.io/badge/version-20.10.17-green.svg">
+<br>
+<img src="https://img.shields.io/badge/InfluxDB-22ADF6?style=flat&logo=InfluxDB&logoColor=white"/>
+<img src="https://img.shields.io/badge/Grafana-F46800?style=flat&logo=Grafana&logoColor=white"/>
+</p>
+
+
+
+
+
+>>>>>>> 57e03ecaed84413b03a24fdd3b5c3ad9a6622425
 
 ## 사용법
 
