@@ -21,7 +21,7 @@ Docker 20.10.17
 influxdb  
 grafana
 
-[Generic badge](https://img.shields.io/badge/version-3.8.10-green.svg)
+![Generic badge](https://img.shields.io/badge/version-3.8.10-green.svg)
 
 ## 사용법
 
