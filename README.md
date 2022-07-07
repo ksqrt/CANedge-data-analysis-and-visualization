@@ -8,7 +8,7 @@ CSS-Electronics사의 파이썬 API 를 활용해 CANedge 데이터 전처리
 <p>
 
 <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=Pythont&logoColor=white" alt="Badge">
-<img src="https://img.shields.io/badge/version-20.10.17-green.svg">
+<img src="https://img.shields.io/badge/version-3.8.10-green.svg">
 <br>
 <img src="https://img.shields.io/badge/Docker-2496ED?style=flat&logo=Docker&logoColor=white" alt="Badge"/>
 <img src="https://img.shields.io/badge/version-20.10.17-green.svg">
