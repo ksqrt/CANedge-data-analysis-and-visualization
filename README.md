@@ -30,9 +30,11 @@ CSS-Electronics사의 파이썬 API 를 활용해 CANedge 데이터 전처리
 
 ## 초기설정
 
+https://github.com/ksqrt/How-to-install-and-link-Grafana-and-influxdb
+
 https://canlogger.csselectronics.com/canedge-getting-started/log-file-tools/browser-dashboard/influxdb-writer/initial-setup/
 
-위 링크를 참고하여 influxDB와 gragan setup을 마칩니다.
+위 두 링크를 참고하여 influxDB와 grafana setup을 마칩니다.
 
 <br>
 
