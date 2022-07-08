@@ -18,6 +18,8 @@ CSS-Electronics사의 파이썬 API 를 활용해 CANedge 데이터 전처리
 
 <br>
 
+<br>
+
 ## 파일 미리보기
 
 - LOG/: raw 데이터를 담고있습니다(.MF4)
@@ -25,22 +27,19 @@ CSS-Electronics사의 파이썬 API 를 활용해 CANedge 데이터 전처리
 - dashboard-templates : grafana 에 import 될 flex 쿼리문을 담고있습니다
 - main.py : exec) 모드에서 실행시 influxdb에 데이터를 가공추출하여 업로드 합니다
 - utils.py: 다른 스크립트에서 사용하는 클래스와 함수가 들어있습니다
+- inputs.py: 사용자의 influx db 의 세부사항이 있습니다
 
 ## 초기설정
 
+https://github.com/ksqrt/How-to-install-and-link-Grafana-and-influxdb
+
 https://canlogger.csselectronics.com/canedge-getting-started/log-file-tools/browser-dashboard/influxdb-writer/initial-setup/
 
-위 링크를 참고하여 influxDB와 gragan setup을 마칩니다.
+위 두 링크를 참고하여 influxDB와 grafana setup을 마칩니다.
 
 <br>
 
 ## 사용방법
-
-### 0 : 다운로드
-
----
-
-초록색 code 버튼을 누룬뒤 Download ZIP 버튼을 눌러 다운로드 이후 압축해제 까지 진행합니다.
 
 <br>
 
@@ -48,7 +47,7 @@ https://canlogger.csselectronics.com/canedge-getting-started/log-file-tools/brow
 
 ---
 
-압축을 해제한 이후 나온 폴더안 inpyts.py 파일을 개인에 맞게 수정합니다  
+inputs.py 파일을 개인에 맞게 수정합니다
 <br>
 
 ```
@@ -80,8 +79,9 @@ python3 -m venv env && source env/bin/activate && pip install -r requirements.tx
 
 ```
 
-python3 이 안된다면 python 으로 바꿔서 해볼것
-설치후 env 파일이 생긴것을 확인할수 있음 env 파일이있으면 삭제후 재설치
+python3 이 안된다면 python 으로 다시해봅니다.  
+설치후 env 파일이 생긴것을 확인 할수있습니다  
+이미 env 파일이 있으면 삭제후 명령어로 재설치 합니다
 
 ### 3 : env 모드로 진입
 
@@ -110,7 +110,7 @@ python3 main.py
 
 ```
 
-성공시 아래의 문구가 여러번 출력되며 influx db에 데이터가 쌓임
+성공시 아래의 문구가 여러번 출력되며 influx db에 데이터가 쌓입니다.
 
 ```
 Signal: response (mean: 4.0 | records: 63 | resampling: 1S)
@@ -121,10 +121,10 @@ Signal: response (mean: 4.0 | records: 63 | resampling: 1S)
 
 ---
 
-Configuration/Plugins 에서 TrackMap 인스톨
-Dashboards/Browse 에서 Import 버튼클릭 이후 dashboard-templates 폴더안의 dashboard-template-sample-data.json 을 업로드한다
+Dashboards/Browse 에서 Import 버튼클릭 이후 dashboard-templates 폴더안의 dashboard-template-sample-data.json 을 업로드합니다
 
-이후 시간대와 속성값을 잘 선택하여 데이터가 표기되는지 확인한다
+이후 시간대와 속성값을 잘 선택하여 데이터가 표기되는지 확인해봅니다.
+Grafana 의 기본시간대 때문에 NO DATA 가 뜰수도있으니 시간대변경을 하며 잘 확인해봅니다.
 
 ## 참고
 
