@@ -1,21 +1,27 @@
 # -----------------------------------------------
 # specify your InfluxDB details
-influx_bucket = "test1"
-token = "MuC6p8UweFKfqnpQ-k_bqgKzU7AclX7VFt-rnGlkIHnrIM6mdXto23MBr4cOPR7h77RqqhMIi7Bc2MmD9DNAhA=="
-influx_url = "http://localhost:8086/"
-org_id = "829013afce059956"
+# # 1. local
+# influx_bucket = "test1"
+# token = "MuC6p8UweFKfqnpQ-k_bqgKzU7AclX7VFt-rnGlkIHnrIM6mdXto23MBr4cOPR7h77RqqhMIi7Bc2MmD9DNAhA=="
+# influx_url = "http://localhost:8086/"
+# org_id = "829013afce059956"
+
+# 2. docker
+influx_bucket = "test"
+token = "F2i3a8rNog_lcRgHeU-5w4MKQX7xhsQHpYx_BobGinOTpeqKBNyybNgjS0C7Ws9L4_TRrZGpJB5uFBMk5Sg4Ag=="
+influx_url = "http://localhost:8086"
+org_id = "fffecc1fa476a203"
 
 # -----------------------------------------------
 # specify devices to process from local disk via ["folder/device_id"] or S3 via ["bucket/device_id"]
 devices = ["LOG/958D2219"]
-
 # -----------------------------------------------
 # specify DBC paths and a list of signals to process ([]: include all signals)
 dbc_paths = ["dbc_files/CSS-Electronics-OBD2-v1.4.dbc"]
 signals = []
 
 # specify resampling frequency ("": no resampling)
-res = "1S"
+res = "0.1S"
 
 # -----------------------------------------------
 # specify whether to load data from S3 (and add server details if relevant)
