@@ -128,9 +128,9 @@ Grafana 의 기본시간대 때문에 NO DATA 가 뜰수도있으니 시간대�
 
 ### 6 : 결과물 확인
 ---
+![https://lh6.googleusercontent.com/2cGFz5ZpP57_mrg9rbuBg7KW6rfrnFdRUsPrTN8PxXZbux-_ramJVPRNjqvg-4PXheyxrN5_FrOSCcrr9bXI=w1920-h942-rw
+](https://lh6.googleusercontent.com/2cGFz5ZpP57_mrg9rbuBg7KW6rfrnFdRUsPrTN8PxXZbux-_ramJVPRNjqvg-4PXheyxrN5_FrOSCcrr9bXI=w1920-h942-rw)
 
-![https://lh4.googleusercontent.com/kbMfHjrWuHtLLcVZueI4aR738vpIEzBrOQDLCI5EQCf0MwW1PA_Yu8lrzCUjKpgGqna_nkuZU6a5iP8EHPU-=w1920-h969-rw
-](https://lh4.googleusercontent.com/kbMfHjrWuHtLLcVZueI4aR738vpIEzBrOQDLCI5EQCf0MwW1PA_Yu8lrzCUjKpgGqna_nkuZU6a5iP8EHPU-=w1920-h969-rw)
 
 ## 참고
 
