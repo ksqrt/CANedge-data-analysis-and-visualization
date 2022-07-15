@@ -127,6 +127,7 @@ Dashboards/Browse 에서 Import 버튼클릭 이후 dashboard-templates 폴더�
 Grafana 의 기본시간대 때문에 NO DATA 가 뜰수도있으니 시간대변경을 하며 잘 확인해봅니다.
 
 ### 6 : 결과물 확인
+---
 
 ![https://lh4.googleusercontent.com/kbMfHjrWuHtLLcVZueI4aR738vpIEzBrOQDLCI5EQCf0MwW1PA_Yu8lrzCUjKpgGqna_nkuZU6a5iP8EHPU-=w1920-h969-rw
 ](https://lh4.googleusercontent.com/kbMfHjrWuHtLLcVZueI4aR738vpIEzBrOQDLCI5EQCf0MwW1PA_Yu8lrzCUjKpgGqna_nkuZU6a5iP8EHPU-=w1920-h969-rw)
