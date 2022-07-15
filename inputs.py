@@ -5,7 +5,7 @@
 # token = "MuC6p8UweFKfqnpQ-k_bqgKzU7AclX7VFt-rnGlkIHnrIM6mdXto23MBr4cOPR7h77RqqhMIi7Bc2MmD9DNAhA=="
 # influx_url = "http://localhost:8086/"
 # org_id = "829013afce059956"
-
+# test
 # 2. docker
 influx_bucket = "test"
 token = "F2i3a8rNog_lcRgHeU-5w4MKQX7xhsQHpYx_BobGinOTpeqKBNyybNgjS0C7Ws9L4_TRrZGpJB5uFBMk5Sg4Ag=="
